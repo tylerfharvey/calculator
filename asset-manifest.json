@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/tylerfharvey.github.io/calculator/static/css/main.073c9b0a.css",
+    "main.js": "/tylerfharvey.github.io/calculator/static/js/main.de3b9b6b.js",
+    "static/js/787.a56d0904.chunk.js": "/tylerfharvey.github.io/calculator/static/js/787.a56d0904.chunk.js",
+    "static/media/logo.svg": "/tylerfharvey.github.io/calculator/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/tylerfharvey.github.io/calculator/index.html",
+    "main.073c9b0a.css.map": "/tylerfharvey.github.io/calculator/static/css/main.073c9b0a.css.map",
+    "main.de3b9b6b.js.map": "/tylerfharvey.github.io/calculator/static/js/main.de3b9b6b.js.map",
+    "787.a56d0904.chunk.js.map": "/tylerfharvey.github.io/calculator/static/js/787.a56d0904.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.de3b9b6b.js"
+  ]
+}
