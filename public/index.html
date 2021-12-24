@@ -1,43 +1,109 @@
-<!--DOCTYPE html-->
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<script>
+  const playSound = (letter) => {
+    let sound = document.getElementById(letter)
+    sound.currentTime = 0;
+    sound.play();
+    let dText = ""
+    switch (letter) {
+      case "Q":
+        dText = 'Heater 1'
+        break;
+      case "W":
+        dText = 'Heater 2'
+        break;
+      case "E":
+        dText = 'Heater 3'
+        break;
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Calculator</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+      case "A":
+        dText = 'Heater 4'
+        break;
+      case "S":
+        dText = 'Clap'
+        break;
+      case "D":
+        dText = 'Open HH'
+        break;
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+      case "Z":
+        dText = 'Kick-n-Hat'
+        break;
+      case "X":
+        dText = 'Kick'
+        break;
+      case "C":
+        dText = 'Closed HH'
+        break;
+      default:
+        dText = ''
+    }
+    //console.log(dText)
+    let display = document.getElementById("display")
+    display.innerHTML = dText
+}
+</script>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
-</html>
+<div class="container" id="drum-machine">
+  <div class="left-cont" id="drum-pad">
+    <div class="drum-row">
+      <div class="drum-pad" id="Heater 1" onclick="playSound('Q')">
+        <audio class="clip" id="Q" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"></audio>
+        <span>Q</span>
+        </div>
+      <div class="drum-pad" id="Heater 2" onclick="playSound('W')">
+        <audio class="clip" id="W" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"></audio>
+        <span>W</span>
+      </div>
+      <div class="drum-pad" id="Heater 3" onclick="playSound('E')">
+        <audio class="clip" id="E" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"></audio>
+        <span>E</span>
+      </div>
+    </div>
+
+    <div class="drum-row">
+      <div class="drum-pad" id="Heater 4" onclick="playSound('A')">
+        <audio class="clip" id="A" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"></audio>
+        <span>A</span>
+      </div>
+      <div class="drum-pad" id="Clap" onclick="playSound('S')">
+        <audio class="clip" id="S" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"></audio>
+        <span>S</span>
+      </div>
+      <div class="drum-pad" id="Open HH" onclick="playSound('D')">
+        <audio class="clip" id="D" src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"></audio>
+        <span>D</span>
+      </div>
+    </div>
+    
+    <div class="drum-row"> 
+      <div class="drum-pad" id="Kick-n-Hat" onclick="playSound('Z')">
+        <audio class="clip" id="Z" src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"></audio>
+        <span>Z</span>
+      </div>
+      <div class="drum-pad" id="Kick" onclick="playSound('X')">
+        <audio class="clip" id="X" src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"></audio>
+        <span>X</span>
+      </div>
+      <div class="drum-pad"  id="Closed HiHat" onclick="playSound('C')">
+        <audio class="clip" id="C" src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"></audio>
+        <span>C</span>
+      </div>
+    </div>
+ 
+  </div>
+  <div class="right-cont">
+    <span id="display">aaa</span> 
+  </div>
+
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+<script>
+  const handleKeyPress = (e) => {
+      playSound(e.key.toUpperCase())
+  }
+  document.addEventListener("keypress", handleKeyPress)
+</script>
